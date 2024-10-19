@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["resources/js/*"],
+            "#/*": ["resources/_mockApis/*"],
+            "$/*": ["public/*"]
+        }
+    },
+    "exclude": ["node_modules", "public"]
+}

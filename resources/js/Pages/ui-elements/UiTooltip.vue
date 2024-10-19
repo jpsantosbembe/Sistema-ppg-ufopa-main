@@ -1,0 +1,48 @@
+<script setup>
+import { ref } from 'vue';
+import FullLayout from "@/Layouts/full/FullLayout.vue";
+import BaseBreadcrumb from "@/Components/shared/BaseBreadcrumb.vue";
+import UiParentCard from "@/Components/shared/UiParentCard.vue";
+import SimpleTooltip from "@/Components/ui-components/tooltip/SimpleTooltip.vue";
+import IconTooltip from "@/Components/ui-components/tooltip/IconTooltip.vue";
+import ToggleTolltip from "@/Components/ui-components/tooltip/ToggleTolltip.vue";
+
+// theme breadcrumb
+const page = ref({ title: 'Tooltip' });
+const breadcrumbs = ref([
+    {
+        text: 'Home',
+        disabled: false,
+        href: '#'
+    },
+    {
+        text: 'Tooltip',
+        disabled: true,
+        href: '#'
+    }
+]);
+
+</script>
+<template>
+    <FullLayout>
+        <BaseBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></BaseBreadcrumb>
+
+        <v-row>
+            <v-col cols="12" md="6">
+                <UiParentCard title="Simple">
+                    <SimpleTooltip/>
+                </UiParentCard>
+            </v-col>
+            <v-col cols="12" md="6">
+                <UiParentCard title="Icon">
+                    <IconTooltip/>
+                </UiParentCard>
+            </v-col>
+            <v-col cols="12">
+                <UiParentCard title="Toggle Tolltip">
+                    <ToggleTolltip/>
+                </UiParentCard>
+            </v-col>
+        </v-row>
+    </FullLayout>
+</template>
